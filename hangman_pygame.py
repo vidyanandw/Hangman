@@ -11,7 +11,7 @@ screen = pygame.display.set_mode((WIDTH, HEIGHT))
 pygame.display.set_caption('Hangman')
 
 #set background image
-background = pygame.image.load('bg_orange2.jpg')
+background = pygame.image.load('Images/bg_orange2.jpg')
 dim_x, dim_y = background.get_rect().size
 scale = dim_x/WIDTH
 dim_x = WIDTH
@@ -23,7 +23,7 @@ background = pygame.transform.scale(background, (dim_x, dim_y))
 hangman_stage = 0
 hangman_images = {}
 for i in range(7):
-	image_id = 'hangman' + str(i) + '.png'
+	image_id = 'Images/hangman' + str(i) + '.png'
 	image = pygame.image.load(image_id)
 	image = pygame.transform.scale(image, (350, 350))
 	hangman_images[i] = image
@@ -46,9 +46,9 @@ CIRCLE_STATUS = {0 : [WRONG, 0], 1 : [ORANGE, 2]}
 #TITLE_FONT = pygame.font.Font('Black Night.ttf', 150)
 #title = TITLE_FONT.render('Hangman', True, WHITE)
 #screen.blit(title, (50, 50))
-LETTER_FONT = pygame.font.Font('KOMIKAX_.ttf', 18)
-WORD_DISPLAY_FONT = pygame.font.Font('KOMIKAX_.ttf', 40)
-MESSAGE_DISPLAY_FONT = pygame.font.Font('KOMTXTB_.ttf', 50)
+LETTER_FONT = pygame.font.Font('Fonts/KOMIKAX_.ttf', 18)
+WORD_DISPLAY_FONT = pygame.font.Font('Fonts/KOMIKAX_.ttf', 40)
+MESSAGE_DISPLAY_FONT = pygame.font.Font('Fonts/KOMTXTB_.ttf', 50)
 
 #dictionary of {letter : [x coord of circle center, y coord of circle center, pressed_status]}
 letter_buttons = {}
@@ -121,7 +121,7 @@ def display_result_msg(win):
 
 
 #Select a word to play with
-with open('words.txt') as f:
+with open('Words/words.txt') as f:
 	words = f.readlines()
 
 word_list = clean_words(words)
